@@ -1,0 +1,46 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int freqCount(string s,string ss)
+{
+int count=0,ws=0;
+int patlen=ss.size();
+int len=s.size();
+
+string temp="";
+
+for(int i=0;i<patlen;i++)
+temp+=s[i];
+if(temp==ss)
+count+=1;
+
+for(int i=patlen;i<len;i++)
+{
+        temp.erase(ws,1);
+        temp+=s[i];
+        if(temp==ss)
+        {
+        count+=1;
+        ws+=1;
+        }
+    
+}
+
+    return count;
+}
+
+
+int main()
+{
+    string s,ss;
+    cout <<"enter a string \n";
+    cin >> s;
+    cout <<"enter the substring\n";
+    cin >> ss;
+    
+    
+    int ans=freqCount(s,ss);
+    cout <<"ANSWER IS: "<< ans<<endl;
+
+
+}
