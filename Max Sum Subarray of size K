@@ -5,8 +5,7 @@ long maximumSumSubarray(int k, vector<int> &arr , int N)
         long sum=0;
         long maxx=INT_MIN;
         int we=0,ws=0;
-        for(int i=0;i<arr.size();i++)
-        {
+        
            
             while(we<arr.size())
             {
@@ -19,7 +18,7 @@ long maximumSumSubarray(int k, vector<int> &arr , int N)
             }
             we+=1;
             }
-        }
+        
         return maxx;
         
     }
