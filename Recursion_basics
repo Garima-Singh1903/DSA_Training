@@ -1,0 +1,74 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void helper(int num)
+{
+    if(num==0)
+    return;
+    
+    helper(num-1);
+    cout << num<<" ";
+}
+void solve(int num)
+{
+    if(num==0)
+    return;
+    
+    cout << num<<" ";
+    solve(num-1);
+    
+}
+
+void print(vector<int> arr,int i)
+{
+    if(i>=arr.size())
+    return;
+    
+    cout <<arr[i]<<" ";
+    print(arr,i+1);
+    
+}
+void rev(vector<int> arr,int i)
+{
+    if(i<0)
+    return;
+    
+    cout <<arr[i]<<" ";
+    rev(arr,i-1);
+    
+}
+int maxi=INT_MIN;
+int maxx(vector<int>arr,int i)
+{
+    if(i>=arr.size())
+    return maxi;
+    
+    maxi=max(maxi,arr[i]);
+   return  maxx(arr,i+1);
+
+}
+
+
+int main() 
+{
+    
+    
+    cout << "1 to 8 : "<<endl;
+    helper(8);
+    
+    cout << "\n8 to 1 : "<<endl;
+    solve(8);
+    vector<int> arr={74,23,2,13,89,24};
+    
+    cout << "\nPrint array : ";
+    print(arr,0);
+    
+    cout <<"\nArray in reverse : ";
+    rev(arr,arr.size()-1);
+    
+    
+   
+    cout << "\nMax in array: "<< maxx(arr,0);
+   
+
+}
